@@ -6,12 +6,12 @@
     <title>Rigoberto Castellanos - Portfolio</title>
     <style>
         :root {
-            --bg-color: #050505; /* Deep black background */
-            --card-bg: #111111;  /* Slightly lighter black for cards */
-            --card-border: #222222; /* Subtle dark grey border */
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --card-border: #222222;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
-            --accent: #e5e7eb; /* Light grey for subtle highlights */
+            --accent: #e5e7eb;
         }
 
         * {
@@ -37,7 +37,6 @@
             gap: 1.5rem;
         }
 
-        /* Dark Cards */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -46,7 +45,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
-        /* Header Section */
         .profile-header {
             display: flex;
             align-items: center;
@@ -62,14 +60,12 @@
             border: 2px solid var(--card-border);
         }
 
-        /* THIS IS THE ZOOM TRICK */
         .profile-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Adjust the percentage (e.g., 20%) to move the focus up or down on your face */
             object-position: center 20%; 
-            transform: scale(1.15); /* Slight zoom in */
+            transform: scale(1.15);
         }
 
         .profile-info h1 {
@@ -104,7 +100,6 @@
             border-bottom: 1px solid #ffffff;
         }
 
-        /* Section Titles */
         .section-title {
             display: flex;
             align-items: center;
@@ -119,7 +114,6 @@
             padding-bottom: 0.5rem;
         }
 
-        /* Education */
         .edu-flex {
             display: flex;
             justify-content: space-between;
@@ -142,7 +136,6 @@
             font-size: 0.95rem;
         }
 
-        /* Expanded Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -167,7 +160,6 @@
             color: #ffffff;
         }
 
-        /* Projects */
         .project-item {
             margin-bottom: 2rem;
         }
@@ -219,7 +211,6 @@
             color: #000000;
         }
 
-        /* Mobile Responsiveness */
         @media (max-width: 650px) {
             .profile-header {
                 flex-direction: column;
@@ -253,7 +244,7 @@
             <div class="contact-links">
                 <span>📍 Portland, OR</span>
                 <a href="mailto:castellrca@gmail.com">castellrca@gmail.com</a>
-                <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+                <a href="https://github.com/Rigoberto-Castellanos" target="_blank">github.com/Rigoberto-Castellanos</a>
                 <a href="https://www.linkedin.com/in/rigoberto-castellanos/" target="_blank">linkedin.com/in/rigoberto-castellanos</a>
             </div>
         </div>
@@ -305,7 +296,7 @@
             <div class="project-desc">
                 Architected a multi-layered asset ingestion pipeline in Python that extracts 10,000+ daily operational records from external web APIs. Designed a normalized SQL database layer and deployed the automated script on a local Ubuntu Linux server utilizing cron job scheduling.
             </div>
-            <a href="https://github.com/yourusername/project-repo" class="btn-github" target="_blank">View GitHub Code</a>
+            <a href="https://github.com/Rigoberto-Castellanos/project-repo" class="btn-github" target="_blank">View GitHub Code</a>
         </div>
 
         <div class="project-item">
@@ -317,7 +308,7 @@
             <div class="project-desc">
                 Engineered an end-to-end data processing workflow to clean, parse, and analyze massive public sector behavior datasets. Implemented time-series predictive modeling to capture macro demand trends and visualized results via an interactive web dashboard.
             </div>
-            <a href="#" class="btn-github" target="_blank">View GitHub Code</a>
+            <a href="https://github.com/Rigoberto-Castellanos/project-repo-2" class="btn-github" target="_blank">View GitHub Code</a>
         </div>
     </div>
 
