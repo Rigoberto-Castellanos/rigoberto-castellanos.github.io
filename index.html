@@ -3,217 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rigoberto Castellanos - Resume & Portfolio</title>
+    <title>Rigoberto Castellanos - Developer Portfolio</title>
     <style>
         :root {
-            --primary: #ffffff;
-            --secondary: #94a3b8;
-            --accent: #38bdf8;
-            --text: #f8fafc;
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --border: #334155;
+            --bg-main: #000000;
+            --bg-card: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent: #3b82f6;
+            --border-color: #333333;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: var(--text);
-            background-color: var(--bg);
-            line-height: 1.5;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
             padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .profile-wrapper {
+            max-width: 850px;
+            width: 100%;
+            display: grid;
+            gap: 1.5rem;
         }
 
-        .resume-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--bg);
-            padding: 2rem 0;
+        /* Hero / Profile Card Section */
+        .hero-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
         }
 
-        h1 {
-            color: var(--primary);
+        .hero-info h1 {
+            margin: 0 0 0.5rem 0;
             font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
+            letter-spacing: -0.02em;
         }
 
-        .contact-info {
+        .contact-links {
             display: flex;
             flex-wrap: wrap;
             gap: 1.25rem;
-            color: var(--secondary);
-            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
-        .contact-info a {
+        .contact-links a {
             color: var(--accent);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        .contact-info a:hover {
+        .contact-links a:hover {
+            color: #60a5fa;
             text-decoration: underline;
         }
 
-        section {
-            margin-bottom: 2rem;
+        .separator-line {
+            width: 100%;
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 1rem 0;
         }
 
-        h2 {
-            color: var(--primary);
+        /* Content Cards */
+        .section-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .section-card:hover {
+            border-color: #444444;
+        }
+
+        .section-card h2 {
+            margin-top: 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
             font-size: 1.15rem;
+            color: var(--text-primary);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.25rem;
-            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
         }
 
-        .grid-skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: var(--card-bg);
-            padding: 0.35rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-family: monospace;
-            text-align: center;
-            border: 1px solid var(--border);
-            color: var(--text);
-        }
-
-        .job, .project {
-            margin-bottom: 1.25rem;
-        }
-
-        .job-header, .project-header {
+        /* Skills Grid */
+        .skills-grid {
             display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
-        .job-sub, .project-sub {
-            display: flex;
-            justify-content: space-between;
-            color: var(--secondary);
+        .skill-badge {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             font-size: 0.9rem;
-            font-style: italic;
-            margin-bottom: 0.35rem;
+            font-family: monospace;
         }
 
-        .project-header a {
+        /* Project & Education Items */
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+        }
+
+        .item-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .item-date {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .project-link {
             color: var(--accent);
             text-decoration: none;
+            font-size: 0.9rem;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
         }
-
-        .project-header a:hover {
-            text-decoration: underline;
+        
+        .project-link:hover {
+            background: rgba(59, 130, 246, 0.2);
         }
 
         ul {
-            list-style-type: square;
-            margin-left: 1.25rem;
-            font-size: 0.925rem;
-            color: var(--secondary);
+            margin: 0;
+            padding-left: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         li {
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Print Settings optimization */
-        @media print {
-            :root {
-                --primary: #000000;
-                --secondary: #475569;
-                --text: #0f172a;
-                --bg: #ffffff;
-                --card-bg: #ffffff;
-                --border: #cbd5e1;
+        /* Mobile Responsiveness */
+        @media (max-width: 650px) {
+            .hero-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
             }
-            body {
-                padding: 0;
-                background: none;
+            .contact-links {
+                justify-content: center;
             }
-            .skill-tag {
-                border: 1px solid #cbd5e1;
-            }
-            .project-header a {
-                color: #000000;
+            .item-header {
+                flex-direction: column;
+                gap: 0.25rem;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-container">
-    <header>
-        <h1>Rigoberto Castellanos</h1>
-        <div class="contact-info">
-            <span>📍 Portland, OR</span>
-            <span>📧 <a href="mailto:castellrca@gmail.com">castellrca@gmail.com</a></span>
-            <span>🌐 <a href="https://github.com/yourusername" id="git-link" target="_blank">github.com/yourusername</a></span>
-            <span>🔗 <a href="https://www.linkedin.com/in/rigoberto-castellanos/" target="_blank">linkedin.com/in/rigoberto-castellanos</a></span>
+<div class="profile-wrapper">
+    
+    <div class="hero-card">
+        <img src="careerprofil.png" alt="Rigoberto Castellanos" class="profile-pic">
+        
+        <div class="hero-info">
+            <h1>Rigoberto Castellanos</h1>
+            <div class="contact-links">
+                <span>📍 Portland, OR</span>
+                <span>📧 <a href="mailto:castellrca@gmail.com">castellrca@gmail.com</a></span>
+                <span>🌐 <a href="https://github.com/rigobertocastellanos" target="_blank">github.com/rigobertocastellanos</a></span>
+            </div>
+            
+            <div class="separator-line"></div>
+            
+            <div class="contact-links">
+                <span>🔗 <a href="https://www.linkedin.com/in/rigoberto-castellanos/" target="_blank">linkedin.com/in/rigoberto-castellanos</a></span>
+            </div>
         </div>
-    </header>
+    </div>
 
-    <section id="education">
+    <div class="section-card">
         <h2>Education</h2>
-        <div class="job">
-            <div class="job-header">
-                <span>Lewis & Clark College</span>
-                <span>Graduation: May 2026</span>
-            </div>
-            <div class="job-sub">
-                <span>B.S. in Computer Science, Minor in Data Science</span>
-                <span>Portland, OR</span>
-            </div>
+        <div class="item-header">
+            <span class="item-title">Lewis & Clark College</span>
+            <span class="item-date">Graduated: May 2026</span>
         </div>
-    </section>
+        <div class="item-subtitle">B.S. in Computer Science, Minor in Data Science</div>
+    </div>
 
-    <section id="skills">
+    <div class="section-card">
         <h2>Technical Skills</h2>
-        <div class="grid-skills">
-            <div class="skill-tag">Python</div>
-            <div class="skill-tag">C / C++</div>
-            <div class="skill-tag">SQL</div>
-            <div class="skill-tag">Linux / Ubuntu</div>
-            <div class="skill-tag">Bash Scripting</div>
-            <div class="skill-tag">Git / GitHub</div>
-            <div class="skill-tag">Docker</div>
-            <div class="skill-tag">Data Analysis</div>
+        <div class="skills-grid">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">C / C++</span>
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">Linux / Ubuntu</span>
+            <span class="skill-badge">Bash Scripting</span>
+            <span class="skill-badge">Git / GitHub</span>
+            <span class="skill-badge">Docker</span>
+            <span class="skill-badge">Data Analysis</span>
         </div>
-    </section>
+    </div>
 
-    <section id="projects">
+    <div class="section-card">
         <h2>Technical Projects</h2>
         
-        <div class="project">
-            <div class="project-header">
-                <span>Autonomous Data Engineering Pipeline</span>
-                <span><a href="https://github.com/yourusername/project-repo" class="repo-link" target="_blank">GitHub Code</a></span>
+        <div style="margin-bottom: 2rem;">
+            <div class="item-header">
+                <span class="item-title">Autonomous Data Engineering Pipeline</span>
+                <span class="item-date">2026</span>
             </div>
-            <div class="project-sub">
-                <span>Python, SQL, Linux Bash, Docker</span>
-                <span>2026</span>
+            <div class="item-subtitle">
+                Python, SQL, Linux Bash, Docker | <a href="#" class="project-link">GitHub Code ↗</a>
             </div>
             <ul>
                 <li>Architected a multi-layered asset ingestion pipeline in Python that extracts 10,000+ daily operational records from external web APIs.</li>
@@ -222,50 +258,22 @@
             </ul>
         </div>
 
-        <div class="project">
-            <div class="project-header">
-                <span>Interactive Data Science Dashboard</span>
-                <span><a href="#" target="_blank">GitHub Code</a></span>
+        <div>
+            <div class="item-header">
+                <span class="item-title">Interactive Data Science Dashboard</span>
+                <span class="item-date">2025</span>
             </div>
-            <div class="project-sub">
-                <span>Python (Pandas, Streamlit), Machine Learning</span>
-                <span>2025</span>
+            <div class="item-subtitle">
+                Python (Pandas, Streamlit), Machine Learning | <a href="#" class="project-link">GitHub Code ↗</a>
             </div>
             <ul>
                 <li>Engineered an end-to-end data processing workflow to clean, parse, and analyze massive public sector behavior datasets.</li>
                 <li>Implemented time-series predictive modeling to capture macro demand trends and visualized results via an interactive web dashboard.</li>
             </ul>
         </div>
-    </section>
+    </div>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        
-        <div class="job">
-            <div class="job-header">
-                <span>Technical Assistant</span>
-                <span>Portland, OR</span>
-            </div>
-            <div class="job-sub">
-                <span>Information Technology Support</span>
-                <span>2024 – Present</span>
-            </div>
-            <ul>
-                <li>Delivered high-quality user support and hardware troubleshooting, maintaining stable performance protocols under strict deadlines.</li>
-                <li>Managed high-volume customer interactions with clear communication, matching technical options directly to client requirements.</li>
-            </ul>
-        </div>
-    </section>
 </div>
 
-<script>
-    // Quick script to dynamically clean up placeholders once you put your username in the URL
-    const currentUrl = window.location.hostname;
-    if(currentUrl.includes('.github.io')) {
-        const username = currentUrl.split('.')[0];
-        document.getElementById('git-link').innerText = `github.com/${username}`;
-        document.getElementById('git-link').href = `https://github.com/${username}`;
-    }
-</script>
 </body>
 </html>
