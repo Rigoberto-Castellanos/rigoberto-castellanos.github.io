@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume & Portfolio</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --secondary: #475569;
+            --accent: #2563eb;
+            --text: #0f172a;
+            --bg: #ffffff;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background-color: var(--light-bg);
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        header {
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--secondary);
+            padding-bottom: 0.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .grid-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--light-bg);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: monospace;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .job, .project {
+            margin-bottom: 1rem;
+        }
+
+        .job-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .job-sub, .project-sub {
+            display: flex;
+            justify-content: space-between;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 0.25rem;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 1.25rem;
+            font-size: 0.925rem;
+            color: var(--text);
+        }
+
+        li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* Strict Print Rules for Single-Page Layout */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            .contact-info a {
+                color: var(--text);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    <header>
+        <h1>[Your Name]</h1>
+        <div class="contact-info">
+            <span>📍 Portland, OR</span>
+            <span>📧 <a href="mailto:your.email@example.com">your.email@example.com</a></span>
+            <span>🌐 <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></span>
+            <span>🔗 <a href="#" target="_blank">linkedin.com/in/username</a></span>
+        </div>
+    </header>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="job">
+            <div class="job-header">
+                <span>[Your College / University]</span>
+                <span>Graduation: May 2026</span>
+            </div>
+            <div class="job-sub">
+                <span>B.S. in Computer Science, Minor in Data Science</span>
+                <span>GPA: [X.XX]</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="grid-skills">
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">C / C++</div>
+            <div class="skill-tag">SQL</div>
+            <div class="skill-tag">Linux / Ubuntu</div>
+            <div class="skill-tag">Bash Scripting</div>
+            <div class="skill-tag">Git / GitHub</div>
+            <div class="skill-tag">Docker</div>
+            <div class="skill-tag">Data Analysis</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Technical Projects</h2>
+        
+        <div class="project">
+            <div class="project-header">
+                <span>Autonomous Data Engineering Pipeline</span>
+                <span><a href="https://github.com/yourusername/project-repo" target="_blank">GitHub Code</a></span>
+            </div>
+            <div class="project-sub">
+                <span>Python, SQL, Linux Bash, Docker</span>
+                <span>2026</span>
+            </div>
+            <ul>
+                <li>Architected a multi-layered asset ingestion pipeline in Python that extracts 10,000+ daily operational records from external web APIs.</li>
+                <li>Designed a normalized SQL database layer to clean and store complex datasets, eliminating structured data redundancies.</li>
+                <li>Containerized the solution using Docker and deployed the automated script on a local Ubuntu Linux server utilizing cron job scheduling.</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <span>Interactive Data Science Dashboard</span>
+                <span><a href="#" target="_blank">GitHub Code</a></span>
+            </div>
+            <div class="project-sub">
+                <span>Python (Pandas, Streamlit), Machine Learning</span>
+                <span>2025</span>
+            </div>
+            <ul>
+                <li>Engineered an end-to-end data processing workflow to clean, parse, and analyze massive public sector behavior datasets.</li>
+                <li>Implemented time-series predictive modeling to capture macro demand trends and visualized results via an interactive web dashboard.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <span>[Current or Past Employer Company]</span>
+                <span>Portland, OR</span>
+            </div>
+            <div class="job-sub">
+                <span>[Your Job Title - e.g., Technical Assistant / Retail Sales]</span>
+                <span>[Start Date] – Present</span>
+            </div>
+            <ul>
+                <li>Delivered high-quality user support and hardware troubleshooting, maintaining stable performance protocols under strict deadlines.</li>
+                <li>Managed high-volume customer interactions with clear communication, matching technical options directly to client requirements.</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
